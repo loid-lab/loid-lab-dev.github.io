@@ -14,21 +14,21 @@ const ProjectsSection = () => {
       title: "Blockchain Prototype",
       description: "Experimental blockchain implementation exploring consensus mechanisms, cryptographic hashing, and distributed ledger technology in Go.",
       techStack: ["Go", "Cryptography", "P2P", "Blockchain", "Distributed Systems"],
-      githubUrl: "https://github.com/loid-lab/blockchain-prototype",
+      githubUrl: "https://github.com/loid-lab/blockchain",
       status: "Experimental"
     },
     {
       title: "Bubble Tea CLI App",
       description: "Interactive terminal user interface application built with Go's Bubble Tea framework. Demonstrates modern CLI development patterns.",
       techStack: ["Go", "Bubble Tea", "CLI", "TUI"],
-      githubUrl: "https://github.com/loid-lab/bubble-tea-app",
+      githubUrl: "https://github.com/loid-lab/todo-cli",
       status: "Completed"
     },
     {
       title: "BitTorrent Client",
       description: "Experimental BitTorrent client implementation in Go. Low-level networking project exploring peer-to-peer protocols and file sharing.",
       techStack: ["Go", "Networking", "P2P", "Concurrency"],
-      githubUrl: "https://github.com/loid-lab/bittorrent-go",
+      githubUrl: "https://github.com/loid-lab/go-torrent",
       status: "Experimental"
     }
   ];
