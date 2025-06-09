@@ -11,6 +11,13 @@ const ProjectsSection = () => {
       status: "In Development"
     },
     {
+      title: "Blockchain Prototype",
+      description: "Experimental blockchain implementation exploring consensus mechanisms, cryptographic hashing, and distributed ledger technology in Go.",
+      techStack: ["Go", "Cryptography", "P2P", "Blockchain", "Distributed Systems"],
+      githubUrl: "https://github.com/loid-lab/blockchain-prototype",
+      status: "Experimental"
+    },
+    {
       title: "Bubble Tea CLI App",
       description: "Interactive terminal user interface application built with Go's Bubble Tea framework. Demonstrates modern CLI development patterns.",
       techStack: ["Go", "Bubble Tea", "CLI", "TUI"],

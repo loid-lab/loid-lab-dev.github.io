@@ -29,16 +29,11 @@ const ContactSection = () => {
           
           <div className="bg-card border border-border rounded-lg p-6 glow-border hover:border-dev-cyan/50 transition-all duration-300">
             <div className="w-12 h-12 bg-dev-cyan/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <span className="text-dev-cyan font-mono text-xl">@</span>
+              <span className="text-dev-cyan font-mono text-xl">#</span>
             </div>
-            <h3 className="text-lg font-mono font-semibold mb-2">Email</h3>
-            <p className="text-muted-foreground mb-2">Let's discuss your next project</p>
-            <button 
-              onClick={() => window.location.href = 'mailto:hello@loid-lab.dev'}
-              className="text-dev-cyan font-mono text-sm hover:text-dev-cyan-dark transition-colors"
-            >
-              hello@loid-lab.dev
-            </button>
+            <h3 className="text-lg font-mono font-semibold mb-2">Discord</h3>
+            <p className="text-muted-foreground mb-2">Let's chat about tech and projects</p>
+            <p className="text-dev-cyan font-mono text-sm">@loid4939</p>
           </div>
         </div>
         
