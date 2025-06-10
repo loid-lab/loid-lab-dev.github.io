@@ -1,16 +1,16 @@
+
 import { Github } from 'lucide-react';
-import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const GITHUB_USERNAME = 'loid-lab';
-const FEATURED_REPOS = ['ordino', 'blockchain', 'todo-cli', 'go-torrent'];
+const FEATURED_REPOS = ['ordino', 'blockchain', 'todo-cli', 'go-torrent', 'blockchain-prototype', 'e-commerce-api'];
 
 const getStatusColor = (status) => {
   switch (status) {
-    case 'Completed': return 'text-dev-green';
-    case 'In Development': return 'text-dev-cyan';
-    case 'Experimental': return 'text-dev-orange';
+    case 'Completed': return 'text-retro-green';
+    case 'In Development': return 'text-retro-amber';
+    case 'Experimental': return 'text-retro-cyan';
     default: return 'text-muted-foreground';
   }
 };
@@ -19,14 +19,18 @@ const statusMap = {
   'ordino': 'In Development',
   'blockchain': 'Experimental',
   'todo-cli': 'Completed',
-  'go-torrent': 'Experimental'
+  'go-torrent': 'Experimental',
+  'blockchain-prototype': 'Experimental',
+  'e-commerce-api': 'In Development'
 };
 
 const techStackMap = {
   'ordino': ['Go', 'Next.js', 'PostgreSQL', 'Redis', 'Docker'],
   'blockchain': ['Go', 'Cryptography', 'P2P', 'Blockchain', 'Distributed Systems'],
   'todo-cli': ['Go', 'Bubble Tea', 'CLI', 'TUI'],
-  'go-torrent': ['Go', 'Networking', 'P2P', 'Concurrency']
+  'go-torrent': ['Go', 'Networking', 'P2P', 'Concurrency'],
+  'blockchain-prototype': ['Go', 'Blockchain', 'Consensus', 'Cryptography', 'Networking'],
+  'e-commerce-api': ['Go', 'REST API', 'PostgreSQL', 'JWT', 'Microservices']
 };
 
 const ProjectsSection = () => {
@@ -80,7 +84,7 @@ const ProjectsSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`View ${project.title} on GitHub`}
-                  className="pixel-button text-sm"
+                  className="pixel-button text-sm flex items-center"
                 >
                   <Github className="w-4 h-4 mr-2" />
                   <span>View Code</span>
@@ -107,7 +111,7 @@ const ProjectsSection = () => {
             href={`https://github.com/${GITHUB_USERNAME}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="pixel-button"
+            className="pixel-button inline-flex items-center"
           >
             <span className="mr-2">More projects on GitHub</span>
             <Github className="w-4 h-4" />
