@@ -1,10 +1,9 @@
-
 import { Github } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const GITHUB_USERNAME = 'loid-lab';
-const FEATURED_REPOS = ['ordino', 'blockchain', 'todo-cli', 'go-torrent', 'blockchain-prototype', 'e-commerce-api'];
+const FEATURED_REPOS = ['ordino', 'blockchain', 'todo-cli', 'go-torrent', 'blockchain-prototype'];
 
 const getStatusColor = (status) => {
   switch (status) {
@@ -20,8 +19,7 @@ const statusMap = {
   'blockchain': 'Experimental',
   'todo-cli': 'Completed',
   'go-torrent': 'Experimental',
-  'blockchain-prototype': 'Experimental',
-  'e-commerce-api': 'In Development'
+  'blockchain-prototype': 'Experimental'
 };
 
 const techStackMap = {
@@ -29,8 +27,15 @@ const techStackMap = {
   'blockchain': ['Go', 'Cryptography', 'P2P', 'Blockchain', 'Distributed Systems'],
   'todo-cli': ['Go', 'Bubble Tea', 'CLI', 'TUI'],
   'go-torrent': ['Go', 'Networking', 'P2P', 'Concurrency'],
-  'blockchain-prototype': ['Go', 'Blockchain', 'Consensus', 'Cryptography', 'Networking'],
-  'e-commerce-api': ['Go', 'REST API', 'PostgreSQL', 'JWT', 'Microservices']
+  'blockchain-prototype': ['Go', 'Blockchain', 'Consensus', 'Cryptography', 'Networking']
+};
+
+const projectDescriptions = {
+  'ordino': 'A full-stack web application built with Go backend and Next.js frontend, featuring real-time data processing and modern UI components.',
+  'blockchain': 'A complete blockchain implementation from scratch in Go, exploring distributed consensus algorithms and cryptocurrency fundamentals.',
+  'todo-cli': 'A beautiful terminal-based todo application built with Go and Bubble Tea, featuring an intuitive TUI interface for task management.',
+  'go-torrent': 'A BitTorrent client implementation in Go demonstrating P2P networking, concurrent downloads, and torrent protocol handling.',
+  'blockchain-prototype': 'An experimental blockchain prototype focusing on consensus mechanisms, cryptographic security, and distributed network architecture.'
 };
 
 const ProjectsSection = () => {
@@ -43,7 +48,7 @@ const ProjectsSection = () => {
         const featured = res.data.filter(repo => FEATURED_REPOS.includes(repo.name));
         const enhanced = featured.map(repo => ({
           title: repo.name.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
-          description: repo.description || 'No description provided.',
+          description: projectDescriptions[repo.name] || repo.description || 'No description provided.',
           githubUrl: repo.html_url,
           status: statusMap[repo.name] || 'Unknown',
           techStack: techStackMap[repo.name] || []
