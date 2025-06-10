@@ -2,44 +2,42 @@
 const AboutSection = () => {
   return (
     <section id="about" className="section-padding">
-      <div className="animate-fade-in">
-        <h2 className="text-4xl font-bold mb-8 text-center">
-          <span className="text-dev-cyan font-mono">&gt;</span> About Me
+      <div>
+        <h2 className="text-3xl font-bold mb-8 text-center font-pixel">
+          <span className="terminal-text">$ whoami</span>
         </h2>
         
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-8 items-start">
           <div className="space-y-6">
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Hey there! I'm <span className="text-dev-cyan font-mono">Fabio</span>, 
-              but you might know me as <span className="text-dev-cyan font-mono">Loid Lab</span> in 
-              the development community. I'm passionate about building robust, scalable systems 
-              that solve real-world problems.
+            <p className="text-lg text-muted-foreground leading-relaxed font-mono">
+              So basically, I'm just a developer who really likes Go and building things that work. 
+              Started with web stuff, got hooked on backend systems, and now I spend way too much 
+              time in the terminal.
             </p>
             
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              My expertise spans across <span className="text-dev-green font-mono">cloud infrastructure</span>, 
-              <span className="text-dev-blue font-mono"> backend development</span>, and 
-              <span className="text-dev-purple font-mono"> cybersecurity</span>. I have a particular 
-              love for <span className="text-dev-orange font-mono">Golang</span> and enjoy crafting 
-              CLI tools that make developers' lives easier.
+            <p className="text-lg text-muted-foreground leading-relaxed font-mono">
+              I'm into <span className="text-retro-green">cloud infrastructure</span>, 
+              love making <span className="text-retro-amber">CLI tools</span> that actually save time, 
+              and dabble in <span className="text-retro-cyan">cybersecurity</span> stuff when I can.
             </p>
             
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              When I'm not debugging distributed systems or diving deep into networking protocols, 
-              you'll find me experimenting with new technologies or contributing to open-source projects.
+            <p className="text-lg text-muted-foreground leading-relaxed font-mono">
+              When I'm not coding, I'm probably reading about distributed systems, 
+              messing with Docker containers, or finding new ways to automate boring tasks.
             </p>
           </div>
           
-          <div className="bg-card border border-border rounded-lg p-6 glow-border">
-            <h3 className="text-xl font-mono font-semibold mb-4 text-dev-cyan">
-              $ whoami
+          <div className="project-card">
+            <h3 className="text-xl font-bold mb-4 terminal-text font-pixel">
+              ./stats.txt
             </h3>
             <div className="space-y-2 font-mono text-sm">
-              <div><span className="text-dev-green">Name:</span> Fabio (Loid Lab)</div>
-              <div><span className="text-dev-green">Focus:</span> Backend & Cloud</div>
-              <div><span className="text-dev-green">Languages:</span> Go, TypeScript, Python</div>
-              <div><span className="text-dev-green">Interests:</span> Distributed Systems, CLI Tools</div>
-              <div><span className="text-dev-green">Status:</span> <span className="animate-glow">Available for opportunities</span></div>
+              <div><span className="text-retro-green">name:</span> Fabio</div>
+              <div><span className="text-retro-green">alias:</span> loid-lab</div>
+              <div><span className="text-retro-green">focus:</span> Backend & Infrastructure</div>
+              <div><span className="text-retro-green">favorite_lang:</span> Go (obviously)</div>
+              <div><span className="text-retro-green">coffee_level:</span> dangerously_high</div>
+              <div><span className="text-retro-green">status:</span> <span className="text-retro-green-bright animate-terminal-blink">coding...</span></div>
             </div>
           </div>
         </div>
@@ -49,3 +47,4 @@ const AboutSection = () => {
 };
 
 export default AboutSection;
+

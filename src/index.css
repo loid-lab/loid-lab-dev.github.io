@@ -3,48 +3,51 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom dark theme design system */
+/* Import pixel-perfect font */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+
+/* Custom retro/pixel design system */
 
 @layer base {
   :root {
-    --background: 220 10% 4%;
-    --foreground: 220 10% 95%;
+    --background: 220 10% 8%;
+    --foreground: 120 100% 85%;
 
-    --card: 220 10% 6%;
-    --card-foreground: 220 10% 95%;
+    --card: 220 10% 10%;
+    --card-foreground: 120 100% 85%;
 
-    --popover: 220 10% 6%;
-    --popover-foreground: 220 10% 95%;
+    --popover: 220 10% 10%;
+    --popover-foreground: 120 100% 85%;
 
-    --primary: 197 100% 60%;
-    --primary-foreground: 220 10% 4%;
+    --primary: 120 100% 50%;
+    --primary-foreground: 220 10% 8%;
 
-    --secondary: 220 10% 10%;
-    --secondary-foreground: 220 10% 90%;
+    --secondary: 220 10% 15%;
+    --secondary-foreground: 120 100% 85%;
 
-    --muted: 220 10% 10%;
-    --muted-foreground: 220 10% 60%;
+    --muted: 220 10% 15%;
+    --muted-foreground: 120 20% 60%;
 
-    --accent: 220 10% 12%;
-    --accent-foreground: 220 10% 95%;
+    --accent: 220 10% 18%;
+    --accent-foreground: 120 100% 85%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 220 10% 95%;
 
-    --border: 220 10% 15%;
+    --border: 120 20% 25%;
     --input: 220 10% 15%;
-    --ring: 197 100% 60%;
+    --ring: 120 100% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0px;
 
-    --sidebar-background: 220 10% 4%;
-    --sidebar-foreground: 220 10% 95%;
-    --sidebar-primary: 197 100% 60%;
-    --sidebar-primary-foreground: 220 10% 4%;
-    --sidebar-accent: 220 10% 8%;
-    --sidebar-accent-foreground: 220 10% 95%;
-    --sidebar-border: 220 10% 15%;
-    --sidebar-ring: 197 100% 60%;
+    --sidebar-background: 220 10% 8%;
+    --sidebar-foreground: 120 100% 85%;
+    --sidebar-primary: 120 100% 50%;
+    --sidebar-primary-foreground: 220 10% 8%;
+    --sidebar-accent: 220 10% 12%;
+    --sidebar-accent-foreground: 120 100% 85%;
+    --sidebar-border: 120 20% 25%;
+    --sidebar-ring: 120 100% 50%;
   }
 }
 
@@ -58,49 +61,66 @@
   }
 
   body {
-    @apply bg-dev-dark text-foreground font-sans;
-    background: linear-gradient(135deg, #0a0a0a 0%, #050505 100%);
+    @apply bg-retro-dark text-foreground font-mono;
+    background: #0d1117;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
   }
 
-  /* Custom scrollbar */
+  /* Pixel-perfect scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 12px;
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-dev-gray;
+    @apply bg-retro-darker;
+    border: 2px solid var(--border);
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-dev-cyan rounded;
+    @apply bg-retro-green;
+    border: 2px solid var(--border);
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-dev-cyan-dark;
+    @apply bg-retro-green-bright;
   }
 }
 
 @layer components {
-  .glow-text {
-    text-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+  .pixel-border {
+    border: 2px solid var(--border);
+    box-shadow: 
+      2px 2px 0px var(--border),
+      4px 4px 0px rgba(0, 255, 0, 0.1);
   }
   
-  .glow-border {
-    box-shadow: 0 0 20px rgba(34, 211, 238, 0.1);
+  .pixel-button {
+    @apply px-4 py-2 font-mono font-bold transition-all duration-100;
+    @apply bg-retro-green text-retro-dark pixel-border;
+    @apply hover:bg-retro-green-bright hover:translate-x-1 hover:translate-y-1;
+    @apply hover:shadow-none active:translate-x-2 active:translate-y-2 active:shadow-none;
   }
 
   .tech-tag {
-    @apply px-3 py-1 rounded-full text-xs font-mono font-medium transition-all duration-300;
-    @apply bg-dev-gray border border-dev-gray-light;
-    @apply hover:border-dev-cyan hover:bg-dev-cyan/10 hover:glow-border;
+    @apply px-3 py-1 text-xs font-mono font-bold transition-all duration-100;
+    @apply bg-retro-darker pixel-border text-retro-green;
+    @apply hover:bg-retro-green hover:text-retro-dark;
   }
 
   .project-card {
-    @apply bg-card border border-border rounded-lg p-6 transition-all duration-300;
-    @apply hover:border-primary/50 hover:glow-border hover:transform hover:scale-105;
+    @apply bg-retro-card pixel-border p-6 transition-all duration-200;
+    @apply hover:translate-x-1 hover:translate-y-1 hover:shadow-none;
   }
 
   .section-padding {
-    @apply py-20 px-6 max-w-4xl mx-auto;
+    @apply py-16 px-6 max-w-4xl mx-auto;
+  }
+
+  .terminal-text {
+    @apply font-mono text-retro-green;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
   }
 }
+

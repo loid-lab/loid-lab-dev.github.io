@@ -12,21 +12,22 @@ const Index = () => {
     // Easter egg for fellow developers
     console.log(`
     ╔══════════════════════════════════════╗
-    ║  Welcome to Fabio's Developer Site!  ║
+    ║     Welcome to my digital space!     ║
     ║                                      ║
-    ║  Built with ❤️ using:                ║
+    ║  Built with:                         ║
     ║  • React + TypeScript                ║
     ║  • TailwindCSS                       ║
-    ║  • Smooth animations                 ║
+    ║  • Pixel-perfect vibes               ║
     ║                                      ║
-    ║  Check out the source:               ║
-    ║  github.com/loid-lab                 ║
+    ║  Source: github.com/loid-lab         ║
+    ║                                      ║
+    ║  PS: I really like Go                ║
     ╚══════════════════════════════════════╝
     `);
   }, []);
 
   return (
-    <div className="min-h-screen bg-dev-dark text-foreground">
+    <div className="min-h-screen bg-retro-dark text-foreground">
       <Navigation />
       
       <HeroSection />
@@ -35,12 +36,22 @@ const Index = () => {
       <ProjectsSection />
       <ContactSection />
       
-      {/* Subtle background pattern */}
+      {/* Retro grid background */}
       <div className="fixed inset-0 pointer-events-none opacity-5">
-        <div className="absolute inset-0 bg-gradient-to-br from-dev-cyan/10 via-transparent to-dev-blue/10" />
+        <div 
+          className="w-full h-full" 
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(0, 255, 0, 0.1) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(0, 255, 0, 0.1) 1px, transparent 1px)
+            `,
+            backgroundSize: '20px 20px'
+          }}
+        />
       </div>
     </div>
   );
 };
 
 export default Index;
+

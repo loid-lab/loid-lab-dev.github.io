@@ -63,91 +63,72 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				dev: {
-					dark: '#0a0a0a',
-					darker: '#050505',
-					gray: '#1a1a1a',
-					'gray-light': '#2a2a2a',
-					cyan: '#22d3ee',
-					'cyan-dark': '#0891b2',
-					blue: '#3b82f6',
-					green: '#10b981',
-					purple: '#8b5cf6',
-					orange: '#f97316'
+				retro: {
+					dark: '#0d1117',
+					darker: '#161b22',
+					card: '#1c2128',
+					green: '#00ff00',
+					'green-bright': '#39ff14',
+					'green-dim': '#00cc00',
+					amber: '#ffaa00',
+					cyan: '#00ffff',
+					purple: '#ff00ff'
 				}
 			},
 			fontFamily: {
-				mono: ['JetBrains Mono', 'monospace'],
-				sans: ['Inter', 'sans-serif'],
+				mono: ['Space Mono', 'JetBrains Mono', 'monospace'],
+				pixel: ['Space Mono', 'monospace'],
 			},
 			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				lg: '0px',
+				md: '0px',
+				sm: '0px'
 			},
 			keyframes: {
-				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
-				},
-				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
-				},
-				'fade-in': {
-					'0%': {
-						opacity: '0',
-						transform: 'translateY(20px)'
-					},
-					'100%': {
-						opacity: '1',
-						transform: 'translateY(0)'
-					}
-				},
-				'fade-in-up': {
-					'0%': {
-						opacity: '0',
-						transform: 'translateY(30px)'
-					},
-					'100%': {
-						opacity: '1',
-						transform: 'translateY(0)'
-					}
-				},
-				'glow': {
-					'0%, 100%': {
-						opacity: '1'
-					},
-					'50%': {
-						opacity: '0.5'
-					}
-				},
-				'float': {
+				'pixel-float': {
 					'0%, 100%': {
 						transform: 'translateY(0px)'
 					},
 					'50%': {
-						transform: 'translateY(-10px)'
+						transform: 'translateY(-4px)'
+					}
+				},
+				'terminal-blink': {
+					'0%, 50%': {
+						opacity: '1'
+					},
+					'51%, 100%': {
+						opacity: '0'
+					}
+				},
+				'glitch': {
+					'0%': {
+						transform: 'translate(0)'
+					},
+					'20%': {
+						transform: 'translate(-2px, 2px)'
+					},
+					'40%': {
+						transform: 'translate(-2px, -2px)'
+					},
+					'60%': {
+						transform: 'translate(2px, 2px)'
+					},
+					'80%': {
+						transform: 'translate(2px, -2px)'
+					},
+					'100%': {
+						transform: 'translate(0)'
 					}
 				}
 			},
 			animation: {
-				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out',
-				'fade-in': 'fade-in 0.6s ease-out',
-				'fade-in-up': 'fade-in-up 0.8s ease-out',
-				'glow': 'glow 2s ease-in-out infinite',
-				'float': 'float 3s ease-in-out infinite'
+				'pixel-float': 'pixel-float 2s ease-in-out infinite',
+				'terminal-blink': 'terminal-blink 1s linear infinite',
+				'glitch': 'glitch 0.3s linear infinite'
 			}
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+

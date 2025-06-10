@@ -38,11 +38,11 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-dev-dark/80 backdrop-blur-md border-b border-dev-gray">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-retro-dark/90 backdrop-blur-sm pixel-border border-t-0 border-l-0 border-r-0">
       <div className="max-w-4xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="font-mono font-bold text-lg glow-text">
-            &lt;loid-lab /&gt;
+          <div className="font-pixel font-bold text-lg terminal-text">
+            [loid-lab]
           </div>
           
           <div className="hidden md:flex space-x-6">
@@ -50,10 +50,10 @@ const Navigation = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`font-mono text-sm transition-all duration-300 ${
+                className={`font-mono text-sm transition-all duration-200 px-2 py-1 ${
                   activeSection === item.id
-                    ? 'text-dev-cyan glow-text'
-                    : 'text-muted-foreground hover:text-dev-cyan'
+                    ? 'terminal-text pixel-border bg-retro-card'
+                    : 'text-muted-foreground hover:text-retro-green'
                 }`}
               >
                 {item.label}
@@ -61,9 +61,8 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* Mobile menu button */}
           <div className="md:hidden">
-            <button className="text-dev-cyan font-mono text-sm">
+            <button className="terminal-text font-mono text-sm pixel-border px-2 py-1">
               Menu
             </button>
           </div>
@@ -74,3 +73,4 @@ const Navigation = () => {
 };
 
 export default Navigation;
+

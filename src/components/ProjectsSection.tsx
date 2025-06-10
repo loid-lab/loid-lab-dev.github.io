@@ -1,4 +1,3 @@
-
 import { Github } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
@@ -56,25 +55,22 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="section-padding">
       <div>
-        <h2 className="text-4xl font-bold mb-12 text-center">
-          <span className="text-dev-cyan font-mono">&gt;</span> Featured Projects
+        <h2 className="text-3xl font-bold mb-8 text-center font-pixel">
+          <span className="terminal-text">$ cat projects.json</span>
         </h2>
 
-        <div className="grid gap-8">
+        <div className="grid gap-6">
           {projects.map((project, index) => (
-            <motion.div
+            <div
               key={project.title}
               className="project-card"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2 }}
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div className="flex items-center space-x-3 mb-2 md:mb-0">
-                  <h3 className="text-2xl font-mono font-bold text-dev-cyan">
+                  <h3 className="text-xl font-bold terminal-text font-pixel">
                     {project.title}
                   </h3>
-                  <span className={`text-sm font-mono px-2 py-1 rounded ${getStatusColor(project.status)}`}>
+                  <span className={`text-xs font-mono font-bold px-2 py-1 pixel-border ${getStatusColor(project.status)}`}>
                     {project.status}
                   </span>
                 </div>
@@ -84,14 +80,14 @@ const ProjectsSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`View ${project.title} on GitHub`}
-                  className="flex items-center space-x-2 text-muted-foreground hover:text-dev-cyan transition-colors duration-300"
+                  className="pixel-button text-sm"
                 >
-                  <Github className="w-5 h-5" />
-                  <span className="font-mono text-sm">View Code</span>
+                  <Github className="w-4 h-4 mr-2" />
+                  <span>View Code</span>
                 </a>
               </div>
 
-              <p className="text-muted-foreground mb-6 leading-relaxed">
+              <p className="text-muted-foreground mb-6 leading-relaxed font-mono">
                 {project.description}
               </p>
 
@@ -102,7 +98,7 @@ const ProjectsSection = () => {
                   </span>
                 ))}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
@@ -111,10 +107,10 @@ const ProjectsSection = () => {
             href={`https://github.com/${GITHUB_USERNAME}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center space-x-2 text-dev-cyan hover:text-dev-cyan-dark transition-colors duration-300 font-mono"
+            className="pixel-button"
           >
-            <span>View all projects on GitHub</span>
-            <Github className="w-5 h-5" />
+            <span className="mr-2">More projects on GitHub</span>
+            <Github className="w-4 h-4" />
           </a>
         </div>
       </div>

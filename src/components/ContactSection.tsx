@@ -3,45 +3,44 @@ import { Github } from 'lucide-react';
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="section-padding bg-dev-darker">
-      <div className="animate-fade-in text-center">
-        <h2 className="text-4xl font-bold mb-8">
-          <span className="text-dev-cyan font-mono">&gt;</span> Let's Connect
+    <section id="contact" className="section-padding bg-retro-darker">
+      <div className="text-center">
+        <h2 className="text-3xl font-bold mb-8 font-pixel">
+          <span className="terminal-text">$ echo "Let's chat"</span>
         </h2>
         
-        <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Interested in collaborating or discussing technology? 
-          I'm always open to connecting with fellow developers and exploring new opportunities.
+        <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto font-mono">
+          Got something cool to build? Want to talk about Go, infrastructure, or just geek out about tech? 
+          Hit me up!
         </p>
         
-        <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
           <a
             href="https://github.com/loid-lab"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-card border border-border rounded-lg p-6 glow-border hover:border-dev-cyan/50 transition-all duration-300 group"
+            className="project-card group"
           >
-            <Github className="w-12 h-12 text-dev-cyan mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
-            <h3 className="text-lg font-mono font-semibold mb-2">GitHub</h3>
-            <p className="text-muted-foreground">Check out my projects and contributions</p>
-            <p className="text-dev-cyan font-mono text-sm mt-2">github.com/loid-lab</p>
+            <Github className="w-12 h-12 terminal-text mx-auto mb-4" />
+            <h3 className="text-lg font-bold mb-2 font-pixel terminal-text">GitHub</h3>
+            <p className="text-muted-foreground font-mono mb-2">Check out my repos and contributions</p>
+            <p className="text-retro-green font-mono text-sm">github.com/loid-lab</p>
           </a>
           
-          <div className="bg-card border border-border rounded-lg p-6 glow-border hover:border-dev-cyan/50 transition-all duration-300">
-            <div className="w-12 h-12 bg-dev-cyan/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <span className="text-dev-cyan font-mono text-xl">#</span>
+          <div className="project-card">
+            <div className="w-12 h-12 bg-retro-green pixel-border flex items-center justify-center mx-auto mb-4">
+              <span className="text-retro-dark font-bold text-xl">#</span>
             </div>
-            <h3 className="text-lg font-mono font-semibold mb-2">Discord</h3>
-            <p className="text-muted-foreground mb-2">Let's chat about tech and projects</p>
-            <p className="text-dev-cyan font-mono text-sm">@loid4939</p>
+            <h3 className="text-lg font-bold mb-2 font-pixel terminal-text">Discord</h3>
+            <p className="text-muted-foreground font-mono mb-2">Let's chat about code and stuff</p>
+            <p className="text-retro-green font-mono text-sm">@loid4939</p>
           </div>
         </div>
         
-        <div className="mt-12 pt-8 border-t border-dev-gray">
+        <div className="mt-12 pt-8 border-t border-retro-green">
           <p className="text-muted-foreground font-mono">
-            <span className="text-dev-green">const</span>{' '}
-            <span className="text-dev-cyan">developer</span> = {' '}
-            <span className="text-dev-orange">"Always learning, always building"</span>;
+            <span className="text-retro-green">// </span>
+            Always down to collaborate on interesting projects
           </p>
         </div>
       </div>
@@ -50,3 +49,4 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
+
