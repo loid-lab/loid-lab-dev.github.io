@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const GITHUB_USERNAME = 'loid-lab';
-const FEATURED_REPOS = ['ordino', 'blockchain', 'todo-cli', 'go-torrent', 'blockchain-prototype'];
+const FEATURED_REPOS = ['ordino', 'blockchain', 'todo-cli', 'go-torrent', 'blockchain-prototype', 'e-commerce-api'];
 
 const getStatusColor = (status) => {
   switch (status) {
@@ -19,7 +19,8 @@ const statusMap = {
   'blockchain': 'Experimental',
   'todo-cli': 'Completed',
   'go-torrent': 'Experimental',
-  'blockchain-prototype': 'Experimental'
+  'blockchain-prototype': 'Experimental',
+  'e-commerce-api': 'In Development'
 };
 
 const techStackMap = {
@@ -27,7 +28,8 @@ const techStackMap = {
   'blockchain': ['Go', 'Cryptography', 'P2P', 'Blockchain', 'Distributed Systems'],
   'todo-cli': ['Go', 'Bubble Tea', 'CLI', 'TUI'],
   'go-torrent': ['Go', 'Networking', 'P2P', 'Concurrency'],
-  'blockchain-prototype': ['Go', 'Blockchain', 'Consensus', 'Cryptography', 'Networking']
+  'blockchain-prototype': ['Go', 'Blockchain', 'Consensus', 'Cryptography', 'Networking'],
+  'e-commerce-api': ['Go', 'REST API', 'PostgreSQL', 'JWT', 'Microservices']
 };
 
 const projectDescriptions = {
@@ -35,7 +37,8 @@ const projectDescriptions = {
   'blockchain': 'A complete blockchain implementation from scratch in Go, exploring distributed consensus algorithms and cryptocurrency fundamentals.',
   'todo-cli': 'A beautiful terminal-based todo application built with Go and Bubble Tea, featuring an intuitive TUI interface for task management.',
   'go-torrent': 'A BitTorrent client implementation in Go demonstrating P2P networking, concurrent downloads, and torrent protocol handling.',
-  'blockchain-prototype': 'An experimental blockchain prototype focusing on consensus mechanisms, cryptographic security, and distributed network architecture.'
+  'blockchain-prototype': 'An experimental blockchain prototype focusing on consensus mechanisms, cryptographic security, and distributed network architecture.',
+  'e-commerce-api': 'A robust e-commerce REST API with JWT authentication, real-time inventory tracking, and microservices architecture. Features automated payment processing and advanced caching strategies.'
 };
 
 const ProjectsSection = () => {
