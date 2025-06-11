@@ -15,10 +15,12 @@ const AboutSection = () => {
               time in the terminal.
             </p>
             
-            <p className="text-lg text-muted-foreground leading-relaxed font-mono">
-              I'm into <span className="text-retro-green">cloud infrastructure</span>, 
-              love making <span className="text-retro-amber">CLI tools</span> that actually save time, 
-              and dabble in <span className="text-retro-cyan">cybersecurity</span> stuff when I can.
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              My expertise spans across <span className="text-dev-green font-mono">cloud infrastructure</span>, 
+              <span className="text-dev-blue font-mono"> backend development</span>, and 
+              <span className="text-dev-purple font-mono"> cybersecurity</span>. I have a particular 
+              love for <span className="text-dev-orange font-mono">Golang</span> and enjoy crafting 
+              CLI tools that make developers' lives easier.
             </p>
             
             <p className="text-lg text-muted-foreground leading-relaxed font-mono">
